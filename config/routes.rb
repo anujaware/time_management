@@ -56,6 +56,7 @@ TimeManagement::Application.routes.draw do
   match 'appointments/user_tz'
   match 'appointments/change_tz'
   match 'appointments/different_formats'
+  match 'appointments/different_functions'
 
   # See how all your routes lay out with "rake routes"
 
