@@ -1,40 +1,35 @@
-
+<div style='padding-left:100px;'>
+	
 <div style="float: right; background-color: rgb(0, 170, 0); font-style: inherit;">
-<%= form_for appointments_change_tz_url do %>
-	<%= select_tag :time_zone, options_for_select(@all_zones)  %>
+<%= form_tag appointments_change_tz_url do %>
+	<%= select_tag :time_zone, options_for_select(ALL_ZONES) %>
 	<%= submit_tag 'Change Time Zone' %>
 <% end %>
 <%= "User System Time ----- #{Time.now}" %>
 <br />
-<%= "Time In TimeZone Set In Current Session ----- #{Time.zone}" %>
+<%= "User System Time Zone ----- #{Time.now.zone}" %>
 <br />
-<%= "Time In TimeZone Set In Current Session ----- #{Time.zone.now}" %>
+<%= "Session TimeZone ----- #{Time.zone}" %>
+<br />
+<%= "Current Session Time----- #{Time.zone.now}" %>
 </div>
-<h1>Appointments#manage</h1>
+<h1> <%= "Appointments #{params[:action]}"%></h1>
 <p>Display schedules</p>
 <table class="container">
 	<thead>
 		<title>Display schedules</title>
+			<tr>
+				<td><%= "Scheduled At"  %></td>
+				<td>|</td>
+				<td><%= "Scheduled At (to_s)"  %></td>
+			</tr>		
 	</thead>
 	<tbody>
 		<% @schedules.each do |obj| %>
 
 			<tr>
 				<td><%= obj.scheduled_at  %></td>
-			</tr>		
-		<% end %>
-	</tbody>
-</table>
-<h1>Appointments#manage</h1>
-<p>Display schedules</p>
-<table class="container">
-	<thead>
-		<title>Display schedules</title>
-	</thead>
-	<tbody>
-		<% @schedules.each do |obj| %>
-
-			<tr>
+				<td>|</td>
 				<td><%= obj.scheduled_at.to_s  %></td>
 			</tr>		
 		<% end %>
@@ -44,3 +39,5 @@
 <%=link_to 'Index', appointments_index_url%><br />
 <%=link_to 'Index With Time Zone', appointments_index_tz_url%><br />
 <%=link_to "Index With User's Time Zone", appointments_user_tz_url%><br />
+<%=link_to "Different Formats", appointments_different_formats_url%><br />
+</div>

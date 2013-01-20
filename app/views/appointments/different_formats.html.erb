@@ -1,0 +1,11 @@
+
+<h1> <%= "Date and Time in different formats"%></h1>
+<table class="container" style='margin-left:350px;margin-top:70px;'>
+	<tr><td><%=  "Date.today.to_s " %> </td><td> <%="=> #{Date.today.to_s}"%></td></tr>
+	<tr>	<td><%=  "Date.today.to_s(:date_time12)" %> </td><td> <%=" =>  #{Date.today.to_s(:date_time12)}"%></td></tr>
+	<tr><td>	<%=  "Date.today.to_s(:date_time24)" %> </td><td> <%="=>   #{Date.today.to_s(:date_time24)}"%></td></tr>
+	<tr>	<td><%=  "Time.now.to_s" %> </td><td> <%=" =>  #{Time.now.to_s}"%></td></tr>
+	<tr><td>	<%=  "Time.now.to_s(:date_time12)" %> </td><td> <%=" => #{Time.now.to_s(:date_time12)}"%></td></tr>
+	<tr><td><%=  "Time.now.to_s(:date_time24)" %> </td><td> <%=" => #{Time.now.to_s(:date_time24)}"%></td></tr>
+</table>
+<%=link_to 'Manage', appointments_index_url, :style=>'margin-left:600px;margin-top:70px;'%><br />
