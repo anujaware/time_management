@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  scheduled_at: 2013-01-19 22:00:45
+  s_date: 2013-01-19
+  s_time: 2013-01-19 22:00:45
+
+two:
+  scheduled_at: 2013-01-19 22:00:45
+  s_date: 2013-01-19
+  s_time: 2013-01-19 22:00:45
