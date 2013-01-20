@@ -1,0 +1,16 @@
+
+
+<h1> <%= "Differet functions provided by rails"%></h1>
+<table class="container" style='margin:50px;margin-top:70px;'>
+	<tr><td><%=  "Time.now.beginning_of_day " %> </td><td> <%="=> #{Time.now.beginning_of_day}"%></td></tr>
+	<tr>	<td><%=  "Time.now.beginning_of_week" %> </td><td> <%=" =>  #{Time.now.beginning_of_week}"%></td></tr>
+	<tr><td>	<%=  "Time.now.beginning_of_month" %> </td><td> <%="=>   #{Time.now.beginning_of_month}"%></td></tr>
+	<tr>	<td><%=  "Time.now.beginning_of_year" %> </td><td> <%=" =>  #{Time.now.beginning_of_year}"%></td></tr>
+	<tr><td>	<%=  "Time.now.beginning_of_quarter" %> </td><td> <%=" => #{Time.now.beginning_of_quarter}"%></td></tr>
+	<tr><td>	<%=  "Time.current" %> </td><td> <%=" => #{Time.current}"%></td></tr>
+	<tr><td>	<%=  "Time.now.change(:year => '2003')" %> </td><td> <%=" => #{Time.now.change(:year => 2003)}"%></td></tr>
+	<tr><td>	<%=  "Time.Time.now.days_to_week_start (startdate:monday)" %> </td><td> <%=" => #{Time.now.days_to_week_start}"%></td></tr>
+	<tr><td>	<%=  "Some more methods" %> </td><td> <%="end_of_day, end_of_month, end_of_quarter, end_of_week, end_of_year"%></td></tr>
+	<tr><td>	<%=  "" %> </td><td> <%="future?, past?, midnight, monday, months_ago, months_since, next_month, next_week, next_year, prev_year, prev_month, prev_week etc."%></td></tr>
+</table>
+<%=link_to 'Manage', appointments_index_url, :style=>'margin-left:600px;margin-top:70px;'%><br />

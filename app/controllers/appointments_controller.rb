@@ -29,6 +29,7 @@ class AppointmentsController < ApplicationController
 
 	def user_tz
 		Time.zone = Time.now.zone
+		Time.zone = 'Pacific Time (US & Canada)' if ['PST', 'CST'].include?(Time.now.zone)
 		@schedules = Appointment.all
 		render :action => :manage
 	end
