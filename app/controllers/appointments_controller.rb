@@ -3,6 +3,7 @@ class AppointmentsController < ApplicationController
 	before_filter :collect_data
 
 	def manage
+		Time.zone = 'Kolkata'
 		@schedules = Appointment.from_date(2013, 01, 18).to_date(2013, 01, 19)
 	end
 
@@ -35,7 +36,6 @@ class AppointmentsController < ApplicationController
 
 	def change_tz
 		Time.zone = params['time_zone']
-		p Time.zone
 		@schedules = Appointment.all
 		render :action => :manage
 	end
@@ -43,6 +43,6 @@ class AppointmentsController < ApplicationController
 	private
 
 	def collect_data
-		@all_zones = ActiveSupport::TimeZone.all.collect{|tz| sp = "#{tz}".split(')'); [tz, sp.last.strip]}
+		@all_zones = ActiveSupport::TimeZone.all.collect{|tz| sp = "#{tz}".split(')'); [tz, sp.last.strip]}.sort_by!{| obj | obj.last }
 	end
 end
