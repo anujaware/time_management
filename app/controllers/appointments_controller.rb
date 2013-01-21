@@ -6,6 +6,11 @@ class AppointmentsController < ApplicationController
 		Time.zone = 'Kolkata'
 		@schedules = Appointment.from_date(2013, 01, 18).to_date(2013, 01, 19)
 	end
+	def manage_2
+		Time.zone = 'Kolkata'
+		@schedules = Appointment.from_date_2(2013, 01, 18).to_date_2(2013, 01, 19)
+		render :action => :manage
+	end
 
 	def add
 		if request.post?

@@ -50,6 +50,7 @@ TimeManagement::Application.routes.draw do
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
   root :to => 'appointments#manage'
+  match 'appointments/manage_2'
   match 'appointments/add'
   match 'appointments/index'
   match 'appointments/index_tz'
